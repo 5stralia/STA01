@@ -32,6 +32,7 @@ function Recently(props) {
             <RecentItem
               classes={classes}
               name={item.keyword}
+              count={item.count}
               reLoad={props.reLoad}
               key={i}
             />
@@ -50,7 +51,14 @@ function RecentItem(props) {
         onClick={() => props.reLoad(props.name)}
         style={{ cursor: "pointer" }}
       >
-        {props.name}
+        <Grid container>
+          <Grid item xs={6}>
+          <Typography variant="body1" align="left">{props.name}</Typography>
+          </Grid>
+          <Grid item xs={6}>
+            <Typography variant="body1" align="right">{props.count}</Typography>
+          </Grid>
+        </Grid>
       </Paper>
     </Grid>
   );

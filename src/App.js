@@ -176,6 +176,7 @@ class App extends React.Component {
   };
 
   reLoad = query => {
+    if (query == "") return;
     this.setState({ isSearch: 1 });
     this.setState({ query: query });
   };
@@ -193,7 +194,7 @@ class App extends React.Component {
               <main className={classes.mainContent}>
                 <Container maxWidth="sm" className={classes.introBox}>
                   <Paper className={classes.introContent}>
-                    <Typography variant="h5" component="h5">
+                    <Typography variant="h5" component="h5" align="center">
                       전 세계 사용자들의 관심 동향을 살펴보세요
                     </Typography>
                   </Paper>
